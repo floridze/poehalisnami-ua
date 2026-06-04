@@ -1,0 +1,27 @@
+.hotel-comments-form {
+  margin: 0;
+}
+
+.hotel-comments-form__add-comment {
+  --hotel-comments-form-gap-x: 1.25rem;
+  --hotel-comments-form-gap-y: 0.75rem;
+  --hotel-comments-form-field-min-width: 17.5rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--hotel-comments-form-gap-y) var(--hotel-comments-form-gap-x);
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.hotel-comments-form__comment-field {
+  --text-field-width: auto;
+
+  flex: 1 1 var(--hotel-comments-form-field-min-width);
+  min-width: min(var(--hotel-comments-form-field-min-width), 100%);
+}
+
+.hotel-comments-form__submit {
+  flex-shrink: 0;
+}

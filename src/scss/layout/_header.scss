@@ -1,0 +1,32 @@
+@use "@/scss/abstracts/variables" as v;
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 1rem 0;
+  background-color: v.$color-white;
+}
+
+.site-header__inner {
+  display: flex;
+}
+
+.site-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+}
+
+.site-logo__mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  color: v.$color-white;
+  font-size: 0.9rem;
+  background-color: v.$color-primary;
+  border-radius: 0.5rem;
+}

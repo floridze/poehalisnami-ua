@@ -1,0 +1,16 @@
+@use "@/scss/abstracts/functions" as fn;
+@use "@/scss/abstracts/mixins" as mx;
+
+.container {
+  width: 100%;
+  max-width: calc(#{fn.layout-value(xl, container)} + 2rem);
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+@include mx.up(xl) {
+  .container {
+    max-width: fn.layout-value(xl, container);
+    padding-inline: 0;
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "name": "static-project",
+  "version": "1.0.0",
+  "description": "Modern static project with Vite, SCSS, and native JavaScript",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && node scripts/optimize-images.js",
+    "build:local": "npm run build && node scripts/create-local-build.js",
+    "preview": "vite preview"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "not dead",
+    "not op_mini all"
+  ],
+  "devDependencies": {
+    "@fontsource-variable/open-sans": "^5.2.7",
+    "@vitejs/plugin-basic-ssl": "^1.0.1",
+    "autoprefixer": "^10.5.0",
+    "postcss": "^8.5.15",
+    "sass": "^1.69.5",
+    "sharp": "^0.34.5",
+    "svgo": "^4.0.1",
+    "vite": "^5.0.8"
+  }
+}

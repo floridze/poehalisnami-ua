@@ -1,0 +1,43 @@
+.contact-list {
+  --contact-list-gap: 0.375rem;
+  --contact-list-icon-size: 1.0625rem;
+  --contact-list-hover-opacity: 0.75;
+
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: var(--contact-list-gap);
+}
+
+.contact-list__link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: var(--contact-list-icon-size);
+  height: var(--contact-list-icon-size);
+  overflow: hidden;
+  text-decoration: none;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  transition: opacity 0.2s ease-in-out;
+
+  &:hover,
+  &:active,
+  &:focus-visible {
+    opacity: var(--contact-list-hover-opacity);
+  }
+}
+
+.contact-list__link--phone {
+  background-image: url("../../images/icons/contacts/phone.svg");
+}
+
+.contact-list__link--viber {
+  background-image: url("../../images/icons/contacts/viber.svg");
+}
+
+.contact-list__link--whatsapp {
+  background-image: url("../../images/icons/contacts/whatsapp.svg");
+}

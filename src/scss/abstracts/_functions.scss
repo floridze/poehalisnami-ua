@@ -1,0 +1,6 @@
+@use "sass:map";
+@use "layout" as layout;
+
+@function layout-value($breakpoint, $key) {
+  @return map.get(map.get(layout.$breakpoints, $breakpoint), $key);
+}

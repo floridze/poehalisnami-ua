@@ -1,0 +1,7 @@
+@use "functions" as fn;
+
+@mixin up($breakpoint) {
+  @media (min-width: fn.layout-value($breakpoint, breakpoint)) {
+    @content;
+  }
+}

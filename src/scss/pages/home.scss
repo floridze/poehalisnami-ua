@@ -1,0 +1,9 @@
+@use "@/scss/common";
+@use "@/scss/sections/hero";
+@use "@/scss/components/contact-list";
+@use "@/scss/components/scrollbar";
+@use "@/scss/components/pagination";
+@use "@/scss/components/form-elements/text-field";
+@use "@/scss/components/forms/hotel-comments" as hotel-comments-form;
+@use "@/scss/components/modals/hotel-comments" as modal-hotel-comments;
+@use "@/scss/components/tables/hotel-comments" as hotel-comments-table;

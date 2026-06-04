@@ -1,0 +1,9 @@
+@use "@/scss/abstracts/variables" as v;
+
+.site-footer {
+  padding: 1.5rem 0;
+  font-size: 0.8rem;
+  color: v.$color-secondary;
+  background-color: v.$color-dark-blue;
+  text-align: center;
+}

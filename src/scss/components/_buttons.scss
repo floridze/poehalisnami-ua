@@ -1,0 +1,75 @@
+@use "@/scss/abstracts/variables" as v;
+
+.button {
+  --button-padding-x: 1rem;
+  --button-padding-y: 0.5rem;
+  --button-color: currentColor;
+  --button-bg: transparent;
+  --button-border-color: transparent;
+  --button-border-radius: 0.375rem;
+  --button-font-size: 0.875rem;
+  --button-font-weight: 400;
+  --button-line-height: 1.25rem;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--button-padding-y) var(--button-padding-x);
+  color: var(--button-color);
+  font-size: var(--button-font-size);
+  font-weight: var(--button-font-weight);
+  line-height: var(--button-line-height);
+  background-color: var(--button-bg);
+  border: 0 solid var(--button-border-color);
+  border-radius: var(--button-border-radius);
+  outline: none;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    color 0.2s ease-in-out,
+    background-color 0.2s ease-in-out,
+    border-color 0.2s ease-in-out;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.button--bordered {
+  border-width: 1px;
+}
+
+.button--uppercase {
+  text-transform: uppercase;
+}
+
+.button--medium {
+  --button-padding-x: 1.03125rem;
+  --button-padding-y: 0.4375rem;
+  --button-border-radius: 0.375rem;
+  --button-font-size: 0.875rem;
+  --button-font-weight: 400;
+  --button-line-height: 1.25rem;
+}
+
+.button--large {
+  --button-padding-x: 1.75rem;
+  --button-padding-y: 0.75rem;
+  --button-border-radius: 0.25rem;
+  --button-font-size: 1rem;
+  --button-font-weight: 600;
+  --button-line-height: 1.5rem;
+}
+
+.button--primary {
+  --button-color: #{v.$color-white};
+  --button-bg: #{v.$color-primary};
+  --button-border-color: #{v.$color-primary};
+
+  &:hover,
+  &:active,
+  &:focus-visible {
+    --button-bg: #{v.$color-primary-hover};
+    --button-border-color: #{v.$color-primary-hover};
+  }
+}

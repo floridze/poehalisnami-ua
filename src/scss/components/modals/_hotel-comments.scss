@@ -1,0 +1,77 @@
+@use "@/scss/abstracts/variables" as v;
+
+html:has(.modal-hotel-comments[open]) {
+  overflow: hidden;
+}
+
+.modal-hotel-comments {
+  --modal-hotel-comments-width: 1082px;
+  --modal-hotel-comments-padding-x: 2rem;
+  --modal-hotel-comments-padding-y: 3rem;
+  --modal-hotel-comments-radius: 0.625rem;
+
+  width: clamp(calc(320px - 2rem), calc(100% - 2rem), var(--modal-hotel-comments-width));
+  max-width: var(--modal-hotel-comments-width);
+  padding: var(--modal-hotel-comments-padding-y) var(--modal-hotel-comments-padding-x);
+  color: v.$color-dark-blue;
+  background-color: v.$color-white;
+  border: 0;
+  border-radius: var(--modal-hotel-comments-radius);
+  box-shadow: 0 0.5rem 1.25rem rgba(v.$color-black, 0.05);
+  outline: none;
+
+  &::backdrop {
+    background-color: rgba(v.$color-dark-blue, 0.3);
+  }
+}
+
+.modal-hotel-comments__header {
+  display: flex;
+  padding-bottom: 1.25rem;
+}
+
+.modal-hotel-comments__close {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  color: v.$color-font-muted;
+  outline: none;
+  cursor: pointer;
+  transition: color 0.2s ease-in-out;
+
+  &:hover,
+  &:active,
+  &:focus-visible {
+    color: v.$color-font;
+  }
+}
+
+.modal-hotel-comments__close-icon {
+  width: 1rem;
+  height: 1rem;
+  fill: currentColor;
+}
+
+.modal-hotel-comments__title {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.modal-hotel-comments__body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.modal-hotel-comments__footer {
+  display: flex;
+  justify-content: center;
+  padding-top: 0.75rem;
+}

@@ -1,0 +1,498 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vadym Varianytsia</title>
+    <link rel="stylesheet" href="./src/scss/pages/home.scss" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <div class="site-header__inner">
+          <div class="site-logo">
+            <span class="site-logo__mark">VV</span>
+            <span>Vadym Varianytsia</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container">
+          <div class="hero__content">
+            <span class="section-eyebrow">модальне вікно</span>
+            <h1 class="hero__title">Коментарі про готель</h1>
+
+            <div class="hero__actions">
+              <button
+                class="button button--bordered button--uppercase button--large button--primary"
+                type="button"
+                command="show-modal"
+                commandfor="modalHotelComments">
+                Подивитись
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div>© 2026 Vadym Varianytsia</div>
+      </div>
+    </footer>
+
+    <dialog
+      id="modalHotelComments"
+      class="modal-hotel-comments scrollbar scrollbar--modal"
+      closedby="any"
+      aria-labelledby="modalHotelCommentsTitle">
+      <form class="hotel-comments-form" method="dialog">
+        <div class="modal-hotel-comments__header">
+          <div id="modalHotelCommentsTitle" class="modal-hotel-comments__title">Коментарі про готель</div>
+
+          <button class="modal-hotel-comments__close" aria-label="Close">
+            <svg class="modal-hotel-comments__close-icon" aria-hidden="true">
+              <use href="./src/images/sprite-icons.svg#icon-close-modal"></use>
+            </svg>
+          </button>
+        </div>
+
+        <div class="modal-hotel-comments__body">
+          <div class="hotel-comments-form__add-comment">
+            <input
+              id="hotelCommentText"
+              class="hotel-comments-form__comment-field text-field"
+              name="hotel-comment"
+              type="text"
+              placeholder="Напишіть свій коментар до готелю"
+              aria-label="Коментар до готелю" />
+
+            <button
+              class="hotel-comments-form__submit button button--bordered button--medium button--primary"
+              type="button">
+              Додати коментар
+            </button>
+          </div>
+
+          <div class="hotel-comments-table scrollbar scrollbar--table" autofocus tabindex="-1">
+            <table class="hotel-comments-table__table">
+              <colgroup>
+                <col class="hotel-comments-table__cell--manager" />
+                <col />
+                <col class="hotel-comments-table__cell--media" />
+              </colgroup>
+
+              <thead>
+                <tr>
+                  <th class="hotel-comments-table__cell hotel-comments-table__cell--head" scope="col">
+                    Дані про менеджера
+                  </th>
+                  <th class="hotel-comments-table__cell hotel-comments-table__cell--head" scope="col">Коментар</th>
+                  <th class="hotel-comments-table__cell hotel-comments-table__cell--head" scope="col">Фото/відео</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td class="hotel-comments-table__cell">
+                    <div class="hotel-comments-table__manager">
+                      <div>
+                        <time class="hotel-comments-table__date" datetime="2019-10-18">18.10.2019</time>
+                        <span class="hotel-comments-table__manager-name">Євгенія Коноплева</span>
+                        <span class="hotel-comments-table__address">Київ, вул. Соломенська, 33</span>
+                      </div>
+
+                      <div class="hotel-comments-table__contacts">
+                        <div class="hotel-comments-table__phone">+38 (067) 123-45-67</div>
+                        <div class="contact-list">
+                          <a
+                            class="contact-list__link contact-list__link--phone"
+                            href="tel:+380671234567"
+                            aria-label="Телефон менеджера"></a>
+                          <a class="contact-list__link contact-list__link--viber" href="viber://chat?number=%2B380671234567" aria-label="Viber"></a>
+                          <a class="contact-list__link contact-list__link--whatsapp" href="https://wa.me/380671234567" aria-label="WhatsApp"></a>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="hotel-comments-table__cell">
+                    У номерах чисто, прибирання якісне, запах приємний. Персонал привітний, сніданки різноманітні,
+                    зручне розташування поруч із морем.
+                  </td>
+                  <td class="hotel-comments-table__cell">
+                    <div class="hotel-comments-table__media-grid">
+                      <a class="hotel-comments-table__media-item" href="./src/images/content/hotels/hotel-1/room-blue.png" target="_blank" rel="noopener">
+                        <img
+                          class="hotel-comments-table__media-image"
+                          src="./src/images/content/hotels/hotel-1/room-blue.png"
+                          width="72"
+                          height="72"
+                          loading="lazy"
+                          decoding="async"
+                          alt="Номер готелю з видом на море" />
+                      </a>
+                      <a class="hotel-comments-table__media-item" href="./src/images/content/hotels/hotel-1/pool-night.png" target="_blank" rel="noopener">
+                        <img
+                          class="hotel-comments-table__media-image"
+                          src="./src/images/content/hotels/hotel-1/pool-night.png"
+                          width="72"
+                          height="72"
+                          loading="lazy"
+                          decoding="async"
+                          alt="Басейн готелю ввечері" />
+                      </a>
+                      <a class="hotel-comments-table__media-item" href="./src/images/content/hotels/hotel-1/room-sea-view.png" target="_blank" rel="noopener">
+                        <img
+                          class="hotel-comments-table__media-image"
+                          src="./src/images/content/hotels/hotel-1/room-sea-view.png"
+                          width="72"
+                          height="72"
+                          loading="lazy"
+                          decoding="async"
+                          alt="Світлий номер готелю з балконом" />
+                      </a>
+                      <a class="hotel-comments-table__media-item" href="./src/images/content/hotels/hotel-1/hotel-exterior-pool.png" target="_blank" rel="noopener">
+                        <img
+                          class="hotel-comments-table__media-image"
+                          src="./src/images/content/hotels/hotel-1/hotel-exterior-pool.png"
+                          width="72"
+                          height="72"
+                          loading="lazy"
+                          decoding="async"
+                          alt="Фасад готелю з басейном" />
+                      </a>
+                      <a class="hotel-comments-table__media-item" href="./src/images/content/hotels/hotel-1/sail-hotel-view.png" target="_blank" rel="noopener">
+                        <img
+                          class="hotel-comments-table__media-image"
+                          src="./src/images/content/hotels/hotel-1/sail-hotel-view.png"
+                          width="72"
+                          height="72"
+                          loading="lazy"
+                          decoding="async"
+                          alt="Вид на готель біля моря" />
+                      </a>
+                      <a class="hotel-comments-table__media-item" href="./src/images/content/hotels/hotel-1/room-blue.png" target="_blank" rel="noopener">
+                        <img
+                          class="hotel-comments-table__media-image"
+                          src="./src/images/content/hotels/hotel-1/room-blue.png"
+                          width="72"
+                          height="72"
+                          loading="lazy"
+                          decoding="async"
+                          alt="Ще фото номера готелю" />
+                        <span class="hotel-comments-table__media-more">35</span>
+                      </a>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="hotel-comments-table__cell">
+                    <div class="hotel-comments-table__manager">
+                      <div>
+                        <time class="hotel-comments-table__date" datetime="2019-10-18">18.10.2019</time>
+                        <span class="hotel-comments-table__manager-name">Євгенія Коноплева</span>
+                        <span class="hotel-comments-table__address">Київ, вул. Соломенська, 33</span>
+                      </div>
+
+                      <div class="hotel-comments-table__contacts">
+                        <div class="hotel-comments-table__phone">+38 (067) 123-45-67</div>
+                        <div class="contact-list">
+                          <a
+                            class="contact-list__link contact-list__link--phone"
+                            href="tel:+380671234567"
+                            aria-label="Телефон менеджера"></a>
+                          <a class="contact-list__link contact-list__link--viber" href="viber://chat?number=%2B380671234567" aria-label="Viber"></a>
+                          <a class="contact-list__link contact-list__link--whatsapp" href="https://wa.me/380671234567" aria-label="WhatsApp"></a>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="hotel-comments-table__cell">
+                    Готель загалом хороший, територія велика й зелена, басейн чистий. Але рушники були з плямами, а їжа
+                    в ресторані іноді подавалася холодною.
+                  </td>
+                  <td class="hotel-comments-table__cell">
+                    <div class="hotel-comments-table__media-grid">
+                      <a class="hotel-comments-table__media-item" href="./src/images/content/hotels/hotel-1/room-blue.png" target="_blank" rel="noopener">
+                        <img
+                          class="hotel-comments-table__media-image"
+                          src="./src/images/content/hotels/hotel-1/room-blue.png"
+                          width="72"
+                          height="72"
+                          loading="lazy"
+                          decoding="async"
+                          alt="Номер готелю з видом на море" />
+                      </a>
+                      <a class="hotel-comments-table__media-item" href="./src/images/content/hotels/hotel-1/pool-night.png" target="_blank" rel="noopener">
+                        <img
+                          class="hotel-comments-table__media-image"
+                          src="./src/images/content/hotels/hotel-1/pool-night.png"
+                          width="72"
+                          height="72"
+                          loading="lazy"
+                          decoding="async"
+                          alt="Басейн готелю ввечері" />
+                      </a>
+                      <a class="hotel-comments-table__media-item" href="./src/images/content/hotels/hotel-1/room-sea-view.png" target="_blank" rel="noopener">
+                        <img
+                          class="hotel-comments-table__media-image"
+                          src="./src/images/content/hotels/hotel-1/room-sea-view.png"
+                          width="72"
+                          height="72"
+                          loading="lazy"
+                          decoding="async"
+                          alt="Світлий номер готелю з балконом" />
+                      </a>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="hotel-comments-table__cell">
+                    <div class="hotel-comments-table__manager">
+                      <div>
+                        <time class="hotel-comments-table__date" datetime="2019-10-18">18.10.2019</time>
+                        <span class="hotel-comments-table__manager-name">Євгенія Коноплева</span>
+                        <span class="hotel-comments-table__address">Київ, вул. Соломенська, 33</span>
+                      </div>
+
+                      <div class="hotel-comments-table__contacts">
+                        <div class="hotel-comments-table__phone">+38 (093) 123-43-21</div>
+                        <div class="contact-list">
+                          <a
+                            class="contact-list__link contact-list__link--phone"
+                            href="tel:+380931234321"
+                            aria-label="Телефон менеджера"></a>
+                          <a class="contact-list__link contact-list__link--viber" href="viber://chat?number=%2B380931234321" aria-label="Viber"></a>
+                          <a class="contact-list__link contact-list__link--whatsapp" href="https://wa.me/380931234321" aria-label="WhatsApp"></a>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="hotel-comments-table__cell">
+                    У номерах чисто, прибирання якісне, запах приємний. Персонал привітний, сніданки різноманітні,
+                    зручне розташування поруч із морем.
+                  </td>
+                  <td class="hotel-comments-table__cell">
+                    <div class="hotel-comments-table__media-grid">
+                      <a class="hotel-comments-table__media-item" href="./src/images/content/hotels/hotel-1/room-blue.png" target="_blank" rel="noopener">
+                        <img
+                          class="hotel-comments-table__media-image"
+                          src="./src/images/content/hotels/hotel-1/room-blue.png"
+                          width="72"
+                          height="72"
+                          loading="lazy"
+                          decoding="async"
+                          alt="Номер готелю з видом на море" />
+                      </a>
+                      <a class="hotel-comments-table__media-item" href="./src/images/content/hotels/hotel-1/pool-night.png" target="_blank" rel="noopener">
+                        <img
+                          class="hotel-comments-table__media-image"
+                          src="./src/images/content/hotels/hotel-1/pool-night.png"
+                          width="72"
+                          height="72"
+                          loading="lazy"
+                          decoding="async"
+                          alt="Басейн готелю ввечері" />
+                      </a>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="hotel-comments-table__cell">
+                    <div class="hotel-comments-table__manager">
+                      <div>
+                        <time class="hotel-comments-table__date" datetime="2019-10-18">18.10.2019</time>
+                        <span class="hotel-comments-table__manager-name">Євгенія Коноплева</span>
+                        <span class="hotel-comments-table__address">Київ, вул. Соломенська, 33</span>
+                      </div>
+
+                      <div class="hotel-comments-table__contacts">
+                        <div class="hotel-comments-table__phone">+38 (099) 198-76-54</div>
+                        <div class="contact-list">
+                          <a
+                            class="contact-list__link contact-list__link--phone"
+                            href="tel:+380991987654"
+                            aria-label="Телефон менеджера"></a>
+                          <a class="contact-list__link contact-list__link--viber" href="viber://chat?number=%2B380991987654" aria-label="Viber"></a>
+                          <a class="contact-list__link contact-list__link--whatsapp" href="https://wa.me/380991987654" aria-label="WhatsApp"></a>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="hotel-comments-table__cell">
+                    Менеджер швидко відповіла на всі питання, допомогла уточнити деталі заселення та порадила номер із
+                    тихішим розташуванням.
+                  </td>
+                  <td class="hotel-comments-table__cell">
+                    <span class="hotel-comments-table__empty-media">Фото ще не додані</span>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="hotel-comments-table__cell">
+                    <div class="hotel-comments-table__manager">
+                      <div>
+                        <time class="hotel-comments-table__date" datetime="2019-10-18">18.10.2019</time>
+                        <span class="hotel-comments-table__manager-name">Євгенія Коноплева</span>
+                        <span class="hotel-comments-table__address">Київ, вул. Соломенська, 33</span>
+                      </div>
+
+                      <div class="hotel-comments-table__contacts">
+                        <div class="hotel-comments-table__phone">+38 (050) 111-22-33</div>
+                        <div class="contact-list">
+                          <a
+                            class="contact-list__link contact-list__link--phone"
+                            href="tel:+380501112233"
+                            aria-label="Телефон менеджера"></a>
+                          <a class="contact-list__link contact-list__link--viber" href="viber://chat?number=%2B380501112233" aria-label="Viber"></a>
+                          <a class="contact-list__link contact-list__link--whatsapp" href="https://wa.me/380501112233" aria-label="WhatsApp"></a>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="hotel-comments-table__cell">
+                    Готель загалом хороший, територія велика й зелена, басейн чистий. Але рушники були з плямами, а їжа
+                    в ресторані іноді подавалася холодною.
+                  </td>
+                  <td class="hotel-comments-table__cell">
+                    <div class="hotel-comments-table__media-grid">
+                      <a class="hotel-comments-table__media-item" href="./src/images/content/hotels/hotel-1/room-blue.png" target="_blank" rel="noopener">
+                        <img
+                          class="hotel-comments-table__media-image"
+                          src="./src/images/content/hotels/hotel-1/room-blue.png"
+                          width="72"
+                          height="72"
+                          loading="lazy"
+                          decoding="async"
+                          alt="Номер готелю з видом на море" />
+                      </a>
+                      <a class="hotel-comments-table__media-item" href="./src/images/content/hotels/hotel-1/pool-night.png" target="_blank" rel="noopener">
+                        <img
+                          class="hotel-comments-table__media-image"
+                          src="./src/images/content/hotels/hotel-1/pool-night.png"
+                          width="72"
+                          height="72"
+                          loading="lazy"
+                          decoding="async"
+                          alt="Басейн готелю ввечері" />
+                      </a>
+                      <a class="hotel-comments-table__media-item" href="./src/images/content/hotels/hotel-1/room-sea-view.png" target="_blank" rel="noopener">
+                        <img
+                          class="hotel-comments-table__media-image"
+                          src="./src/images/content/hotels/hotel-1/room-sea-view.png"
+                          width="72"
+                          height="72"
+                          loading="lazy"
+                          decoding="async"
+                          alt="Світлий номер готелю з балконом" />
+                      </a>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="hotel-comments-table__cell">
+                    <div class="hotel-comments-table__manager">
+                      <div>
+                        <time class="hotel-comments-table__date" datetime="2019-10-18">18.10.2019</time>
+                        <span class="hotel-comments-table__manager-name">Євгенія Коноплева</span>
+                        <span class="hotel-comments-table__address">Київ, вул. Соломенська, 33</span>
+                      </div>
+
+                      <div class="hotel-comments-table__contacts">
+                        <div class="hotel-comments-table__phone">+38 (099) 198-76-54</div>
+                        <div class="contact-list">
+                          <a
+                            class="contact-list__link contact-list__link--phone"
+                            href="tel:+380991987654"
+                            aria-label="Телефон менеджера"></a>
+                          <a class="contact-list__link contact-list__link--viber" href="viber://chat?number=%2B380991987654" aria-label="Viber"></a>
+                          <a class="contact-list__link contact-list__link--whatsapp" href="https://wa.me/380991987654" aria-label="WhatsApp"></a>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="hotel-comments-table__cell">
+                    Менеджер швидко відповіла на всі питання, допомогла уточнити деталі заселення та порадила номер із
+                    тихішим розташуванням.
+                  </td>
+                  <td class="hotel-comments-table__cell">
+                    <span class="hotel-comments-table__empty-media">Фото ще не додані</span>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="hotel-comments-table__cell">
+                    <div class="hotel-comments-table__manager">
+                      <div>
+                        <time class="hotel-comments-table__date" datetime="2019-10-18">18.10.2019</time>
+                        <span class="hotel-comments-table__manager-name">Євгенія Коноплева</span>
+                        <span class="hotel-comments-table__address">Київ, вул. Соломенська, 33</span>
+                      </div>
+
+                      <div class="hotel-comments-table__contacts">
+                        <div class="hotel-comments-table__phone">+38 (099) 198-76-54</div>
+                        <div class="contact-list">
+                          <a
+                            class="contact-list__link contact-list__link--phone"
+                            href="tel:+380991987654"
+                            aria-label="Телефон менеджера"></a>
+                          <a class="contact-list__link contact-list__link--viber" href="viber://chat?number=%2B380991987654" aria-label="Viber"></a>
+                          <a class="contact-list__link contact-list__link--whatsapp" href="https://wa.me/380991987654" aria-label="WhatsApp"></a>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="hotel-comments-table__cell">
+                    Менеджер швидко відповіла на всі питання, допомогла уточнити деталі заселення та порадила номер із
+                    тихішим розташуванням.
+                  </td>
+                  <td class="hotel-comments-table__cell">
+                    <span class="hotel-comments-table__empty-media">Фото ще не додані</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <nav class="pagination" aria-label="Hotel comments pagination">
+            <div class="pagination__prev">
+              <button class="pagination__arrow" type="button" aria-label="Попередня сторінка">
+                <svg class="pagination__icon" aria-hidden="true">
+                  <use href="./src/images/sprite-icons.svg#pagination-arrow-left"></use>
+                </svg>
+              </button>
+            </div>
+
+            <div class="pagination__pages">
+              <button class="pagination__page is-active" type="button" aria-label="Сторінка 1" aria-current="page">
+                1
+              </button>
+              <button class="pagination__page" type="button" aria-label="Сторінка 2">2</button>
+              <button class="pagination__page" type="button" aria-label="Сторінка 3">3</button>
+              <button class="pagination__page" type="button" aria-label="Сторінка 4">4</button>
+              <button class="pagination__page" type="button" aria-label="Сторінка 5">5</button>
+            </div>
+
+            <div class="pagination__next">
+              <button class="pagination__arrow pagination__arrow--next" type="button" aria-label="Наступна сторінка">
+                <svg class="pagination__icon" aria-hidden="true">
+                  <use href="./src/images/sprite-icons.svg#pagination-arrow-left"></use>
+                </svg>
+              </button>
+            </div>
+          </nav>
+        </div>
+      </form>
+    </dialog>
+
+    <script type="module" src="./src/js/home.js"></script>
+  </body>
+</html>
