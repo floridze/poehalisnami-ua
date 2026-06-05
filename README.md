@@ -1,4 +1,4 @@
-# Vadym Varianytsia
+# Vadym V.
 
 Односторінковий статичний проєкт на Vite та SCSS.
 
@@ -48,8 +48,8 @@ npm run preview
 
 ```html
 <picture>
-  <source srcset="./assets/images/example.webp" type="image/webp">
-  <img src="./assets/images/example.png" alt="">
+  <source srcset="./assets/images/example.webp" type="image/webp" />
+  <img src="./assets/images/example.png" alt="" />
 </picture>
 ```
 
