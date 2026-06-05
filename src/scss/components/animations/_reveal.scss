@@ -1,0 +1,31 @@
+.reveal-in {
+  --reveal-in-duration: 0.34s;
+  --reveal-in-delay: 0s;
+  --reveal-in-scale-start: 0.92;
+  --reveal-in-scale-peak: 1.03;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .reveal-in[open],
+  [open] .reveal-in,
+  .reveal-in.is-visible {
+    animation: reveal-in var(--reveal-in-duration) ease-out var(--reveal-in-delay) both;
+  }
+}
+
+@keyframes reveal-in {
+  0% {
+    opacity: 0;
+    transform: scale(var(--reveal-in-scale-start));
+  }
+
+  70% {
+    opacity: 1;
+    transform: scale(var(--reveal-in-scale-peak));
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
