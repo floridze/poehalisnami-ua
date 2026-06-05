@@ -97,9 +97,15 @@ html:has(.modal-hotel-comments[open]) {
   .modal-hotel-comments {
     --modal-hotel-comments-padding-x: 0.75rem;
     --modal-hotel-comments-padding-y: 2rem;
-    --reveal-in-scale-start: 0.98;
+    --reveal-in-scale-start: 1;
     --reveal-in-scale-peak: 1;
 
-    width: calc(100% - 0.5rem);
+    width: calc(100% - 1rem);
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .modal-hotel-comments[open].reveal-in {
+      animation-name: reveal-in-opacity;
+    }
   }
 }
