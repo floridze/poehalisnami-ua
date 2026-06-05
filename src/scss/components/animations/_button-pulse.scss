@@ -1,0 +1,40 @@
+@use "@/scss/abstracts/variables" as v;
+
+.button--pulse {
+  position: relative;
+  isolation: isolate;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: inherit;
+    background-color: var(--button-bg, #{v.$color-primary});
+    pointer-events: none;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .button--pulse::after {
+    will-change: box-shadow, opacity;
+    animation: button-pulse 2s ease-out infinite;
+  }
+}
+
+@keyframes button-pulse {
+  0% {
+    box-shadow: 0 0 0 0 var(--button-bg, #{v.$color-primary});
+    opacity: 0.45;
+  }
+
+  70% {
+    box-shadow: 0 0 0 0.75rem var(--button-bg, #{v.$color-primary});
+    opacity: 0;
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 var(--button-bg, #{v.$color-primary});
+    opacity: 0;
+  }
+}

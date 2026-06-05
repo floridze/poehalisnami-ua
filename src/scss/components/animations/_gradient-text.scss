@@ -1,0 +1,40 @@
+@use "@/scss/abstracts/variables" as v;
+
+.text-gradient-shimmer {
+  --text-gradient-shimmer-base-color: #{v.$color-dark-blue};
+  --text-gradient-shimmer-accent-color: #{v.$color-primary};
+
+  display: inline-block;
+  color: var(--text-gradient-shimmer-base-color);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .text-gradient-shimmer {
+    color: transparent;
+    background-image: linear-gradient(
+      90deg,
+      var(--text-gradient-shimmer-base-color) 0%,
+      var(--text-gradient-shimmer-base-color) 34%,
+      var(--text-gradient-shimmer-accent-color) 50%,
+      var(--text-gradient-shimmer-base-color) 66%,
+      var(--text-gradient-shimmer-base-color) 100%
+    );
+    background-size: 240% 100%;
+    background-position: 100% 50%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    will-change: background-position;
+    animation: text-gradient-shimmer 3s ease-in-out infinite;
+  }
+}
+
+@keyframes text-gradient-shimmer {
+  0% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}

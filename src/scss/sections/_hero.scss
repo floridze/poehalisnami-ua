@@ -22,6 +22,8 @@
 }
 
 .hero__title {
+  --text-gradient-shimmer-base-color: #{v.$color-white};
+
   font-size: v.$font-size-hero-title;
   line-height: v.$line-height-hero-title;
 }
