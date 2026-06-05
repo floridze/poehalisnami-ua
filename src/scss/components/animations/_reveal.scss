@@ -3,6 +3,7 @@
   --reveal-in-delay: 0s;
   --reveal-in-scale-start: 0.92;
   --reveal-in-scale-peak: 1.03;
+  transform-origin: center center;
 }
 
 @media (prefers-reduced-motion: no-preference) {

@@ -10,6 +10,8 @@ html:has(.modal-hotel-comments[open]) {
   --modal-hotel-comments-padding-x: 2rem;
   --modal-hotel-comments-padding-y: 3rem;
   --modal-hotel-comments-radius: 0.625rem;
+  --reveal-in-scale-start: 0.96;
+  --reveal-in-scale-peak: 1.01;
 
   width: clamp(calc(320px - 2rem), calc(100% - 2rem), var(--modal-hotel-comments-width));
   max-width: var(--modal-hotel-comments-width);
@@ -95,6 +97,8 @@ html:has(.modal-hotel-comments[open]) {
   .modal-hotel-comments {
     --modal-hotel-comments-padding-x: 0.75rem;
     --modal-hotel-comments-padding-y: 2rem;
+    --reveal-in-scale-start: 0.98;
+    --reveal-in-scale-peak: 1;
 
     width: calc(100% - 0.5rem);
   }
