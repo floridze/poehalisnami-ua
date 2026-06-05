@@ -1,3 +1,5 @@
+@use "@/scss/abstracts/mixins" as mx;
+
 .hotel-comments-form {
   margin: 0;
 }
@@ -9,7 +11,7 @@
 
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
   gap: var(--hotel-comments-form-gap-y) var(--hotel-comments-form-gap-x);
   flex-wrap: wrap;
   width: 100%;
@@ -24,4 +26,14 @@
 
 .hotel-comments-form__submit {
   flex-shrink: 0;
+}
+
+@include mx.down(sm) {
+  .hotel-comments-form__add-comment {
+    align-items: stretch;
+  }
+
+  .hotel-comments-form__submit {
+    width: 100%;
+  }
 }

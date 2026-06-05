@@ -5,3 +5,9 @@
     @content;
   }
 }
+
+@mixin down($breakpoint) {
+  @media (max-width: fn.layout-value($breakpoint, breakpoint)) {
+    @content;
+  }
+}

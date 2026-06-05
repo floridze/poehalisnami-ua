@@ -1,4 +1,5 @@
 @use "@/scss/abstracts/variables" as v;
+@use "@/scss/abstracts/mixins" as mx;
 
 html:has(.modal-hotel-comments[open]) {
   overflow: hidden;
@@ -59,9 +60,9 @@ html:has(.modal-hotel-comments[open]) {
 
 .modal-hotel-comments__title {
   margin: 0;
-  font-size: 1rem;
+  font-size: v.$font-size-base;
   font-weight: 700;
-  line-height: 1.5;
+  line-height: v.$line-height-base;
 }
 
 .modal-hotel-comments__body {
@@ -74,4 +75,27 @@ html:has(.modal-hotel-comments[open]) {
   display: flex;
   justify-content: center;
   padding-top: 0.75rem;
+}
+
+@include mx.down(md) {
+  .modal-hotel-comments {
+    --modal-hotel-comments-padding-x: 1rem;
+    --modal-hotel-comments-padding-y: 2.5rem;
+
+    width: calc(100% - 1rem);
+  }
+
+  .modal-hotel-comments__close {
+    top: 0.875rem;
+    right: 0.875rem;
+  }
+}
+
+@include mx.down(sm) {
+  .modal-hotel-comments {
+    --modal-hotel-comments-padding-x: 0.75rem;
+    --modal-hotel-comments-padding-y: 2rem;
+
+    width: calc(100% - 0.5rem);
+  }
 }

@@ -9,8 +9,8 @@
   --text-field-border-color: #{v.$color-border-blue};
   --text-field-focus-border-color: #{v.$color-font-muted};
   --text-field-border-radius: 0.375rem;
-  --text-field-font-size: 0.875rem;
-  --text-field-line-height: 1;
+  --text-field-font-size: #{v.$font-size-md};
+  --text-field-line-height: #{v.$line-height-tight};
   --text-field-width: 100%;
   --text-field-min-height: 2.25rem;
 

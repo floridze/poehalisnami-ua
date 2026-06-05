@@ -1,4 +1,13 @@
 $breakpoints: (
+  sm: (
+    breakpoint: 640px,
+  ),
+  md: (
+    breakpoint: 768px,
+  ),
+  lg: (
+    breakpoint: 992px,
+  ),
   xl: (
     breakpoint: 1200px,
     container: 1140px,

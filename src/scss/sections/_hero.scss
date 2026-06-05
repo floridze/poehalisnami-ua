@@ -15,15 +15,15 @@
 }
 
 .section-eyebrow {
-  font-size: 0.8rem;
+  font-size: v.$font-size-hero-eyebrow;
   font-weight: 600;
   letter-spacing: 0.25em;
   text-transform: uppercase;
 }
 
 .hero__title {
-  font-size: 2.5rem;
-  line-height: 1.75;
+  font-size: v.$font-size-hero-title;
+  line-height: v.$line-height-hero-title;
 }
 
 .hero__actions {

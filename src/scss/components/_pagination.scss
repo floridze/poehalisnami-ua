@@ -8,8 +8,8 @@
   --pagination-item-radius: 0.5rem;
   --pagination-color: #{v.$color-font};
   --pagination-page-padding: 0.25rem;
-  --pagination-page-font-size: 0.813rem;
-  --pagination-page-line-height: 1.25rem;
+  --pagination-page-font-size: #{v.$font-size-sm};
+  --pagination-page-line-height: #{v.$line-height-md};
   --pagination-hover-bg: #{rgba(v.$color-font, 0.05)};
   --pagination-active-bg: var(--pagination-hover-bg);
   --pagination-icon-width: 0.4375rem;

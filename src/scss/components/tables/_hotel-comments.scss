@@ -1,4 +1,5 @@
 @use "@/scss/abstracts/variables" as v;
+@use "@/scss/abstracts/mixins" as mx;
 
 .hotel-comments-table {
   --hotel-comments-table-border-color: #{v.$color-table-border};
@@ -28,8 +29,8 @@
 .hotel-comments-table__cell {
   padding: 0.5rem 0.75rem;
   color: v.$color-dark-blue;
-  font-size: 0.8125rem;
-  line-height: 0.9375rem;
+  font-size: v.$font-size-sm;
+  line-height: v.$line-height-xs;
   text-align: left;
   vertical-align: top;
   border-right: 1px solid var(--hotel-comments-table-border-color);
@@ -45,8 +46,8 @@
   top: 0;
   z-index: 2;
   color: v.$color-white;
-  font-size: 0.8125rem;
-  line-height: 1.25rem;
+  font-size: v.$font-size-sm;
+  line-height: v.$line-height-md;
   font-weight: 700;
   background-color: var(--hotel-comments-table-head-bg);
   border-color: v.$color-white;
@@ -89,8 +90,8 @@
   max-width: 100%;
   color: inherit;
   font-weight: 600;
-  font-size: 0.8125rem;
-  line-height: 1.25rem;
+  font-size: v.$font-size-sm;
+  line-height: v.$line-height-md;
   text-decoration: none;
   overflow-wrap: break-word;
 }
@@ -138,8 +139,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1rem;
-  line-height: 0.9375rem;
+  font-size: v.$font-size-base;
+  line-height: v.$line-height-xs;
   font-weight: 600;
   color: v.$color-white;
   background-color: rgba(v.$color-ocean, 0.69);
@@ -151,4 +152,98 @@
 
 .hotel-comments-table__empty-media {
   color: v.$color-secondary;
+}
+
+@include mx.down(lg) {
+  .hotel-comments-table {
+    --hotel-comments-table-border-color: #{v.$color-table-head-bg};
+    --hotel-comments-table-max-height-offset: 15rem;
+    --hotel-comments-table-thumb-size: clamp(4rem, 22vw, 4.5rem);
+
+    max-height: clamp(22rem, calc(100vh - var(--hotel-comments-table-max-height-offset)), 32rem);
+    overflow-x: hidden;
+  }
+
+  .hotel-comments-table__table,
+  .hotel-comments-table__table colgroup,
+  .hotel-comments-table__table thead,
+  .hotel-comments-table__table tbody,
+  .hotel-comments-table__table tr,
+  .hotel-comments-table__cell {
+    display: block;
+  }
+
+  .hotel-comments-table__table {
+    min-width: 0;
+    border-collapse: collapse;
+  }
+
+  .hotel-comments-table__table colgroup,
+  .hotel-comments-table__table thead {
+    display: none;
+  }
+
+  .hotel-comments-table__table tr {
+    overflow: hidden;
+    border: 1px solid var(--hotel-comments-table-border-color);
+    border-radius: 0.5rem;
+    background-color: v.$color-white;
+  }
+
+  .hotel-comments-table__table tr + tr {
+    margin-top: 0.75rem;
+  }
+
+  .hotel-comments-table__cell {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: v.$font-size-md;
+    line-height: v.$line-height-md;
+    border-right: 0;
+    border-bottom: 1px solid var(--hotel-comments-table-border-color);
+  }
+
+  .hotel-comments-table__cell:first-child {
+    border-left: 0;
+  }
+
+  .hotel-comments-table__cell:last-child {
+    border-bottom: 0;
+  }
+
+  .hotel-comments-table__cell::before {
+    content: attr(data-label);
+    display: block;
+    margin-bottom: 0.5rem;
+    color: v.$color-font-muted;
+    font-size: v.$font-size-xs;
+    line-height: v.$line-height-sm;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  .hotel-comments-table__manager,
+  .hotel-comments-table__contacts {
+    gap: 0.625rem;
+  }
+
+  .hotel-comments-table__media-grid {
+    grid-template-columns: repeat(auto-fill, minmax(var(--hotel-comments-table-thumb-size), 1fr));
+  }
+
+  .hotel-comments-table__media-item {
+    width: 100%;
+    aspect-ratio: 1;
+    height: auto;
+  }
+}
+
+@include mx.down(sm) {
+  .hotel-comments-table {
+    --hotel-comments-table-thumb-size: clamp(3.75rem, 28vw, 4.5rem);
+  }
+
+  .hotel-comments-table__cell {
+    padding: 0.625rem;
+  }
 }
