@@ -25,16 +25,17 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     will-change: background-position;
-    animation: text-gradient-shimmer 3s ease-in-out infinite;
+    animation: text-gradient-shimmer 4s ease-in-out infinite;
   }
 }
 
 @keyframes text-gradient-shimmer {
-  0% {
+  0%,
+  100% {
     background-position: 100% 50%;
   }
 
-  100% {
+  55% {
     background-position: 0% 50%;
   }
 }
