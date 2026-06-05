@@ -227,6 +227,12 @@
     gap: 0.625rem;
   }
 
+  .hotel-comments-table__contacts .contact-list {
+    --contact-list-gap: 0.15rem;
+    --contact-list-icon-size: 1.35rem;
+    --contact-list-item-size: 1.75rem;
+  }
+
   .hotel-comments-table__media-grid {
     grid-template-columns: repeat(auto-fill, minmax(var(--hotel-comments-table-thumb-size), 1fr));
   }
