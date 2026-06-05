@@ -59,8 +59,6 @@ html:has(.modal-hotel-comments[open]) {
 }
 
 .modal-hotel-comments__title {
-  --text-gradient-shimmer-base-color: #{v.$color-dark-blue};
-
   margin: 0;
   font-size: v.$font-size-base;
   font-weight: 700;

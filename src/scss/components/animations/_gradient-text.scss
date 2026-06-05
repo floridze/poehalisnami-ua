@@ -3,6 +3,8 @@
 .text-gradient-shimmer {
   --text-gradient-shimmer-base-color: #{v.$color-dark-blue};
   --text-gradient-shimmer-accent-color: #{v.$color-primary};
+  --text-gradient-shimmer-duration: 6s;
+  --text-gradient-shimmer-delay: 0s;
 
   display: inline-block;
   color: var(--text-gradient-shimmer-base-color);
@@ -25,7 +27,15 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     will-change: background-position;
-    animation: text-gradient-shimmer 6s ease-in-out infinite;
+    animation: text-gradient-shimmer var(--text-gradient-shimmer-duration) ease-in-out var(--text-gradient-shimmer-delay) infinite;
+  }
+
+  .text-gradient-shimmer--once {
+    color: var(--text-gradient-shimmer-base-color);
+    -webkit-text-fill-color: currentColor;
+    animation-name: text-gradient-shimmer-once;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
   }
 }
 
@@ -37,5 +47,31 @@
 
   55% {
     background-position: 0% 50%;
+  }
+}
+
+@keyframes text-gradient-shimmer-once {
+  0% {
+    color: var(--text-gradient-shimmer-base-color);
+    background-position: 100% 50%;
+    -webkit-text-fill-color: currentColor;
+  }
+
+  10% {
+    color: transparent;
+    background-position: 100% 50%;
+    -webkit-text-fill-color: transparent;
+  }
+
+  60% {
+    color: transparent;
+    background-position: 0% 50%;
+    -webkit-text-fill-color: transparent;
+  }
+
+  100% {
+    color: var(--text-gradient-shimmer-base-color);
+    background-position: 0% 50%;
+    -webkit-text-fill-color: currentColor;
   }
 }
